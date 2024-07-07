@@ -27,7 +27,7 @@ type Config struct {
 const configYaml = `
 app_name: Organizer
 app_version: 0.0.1
-database_path: "/home/akif/organizer/organizer.db"
+database_path: "/home/{USER NAME}/organizer/organizer.db"
 
 audio_folder: "audios"
 video_folder: "videos"
