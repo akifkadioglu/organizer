@@ -9,7 +9,7 @@ To use the Organizer, you need to have Go installed on your computer.
 1. Clone this repository from [GitHub](https://github.com/akifkadioglu/organizer): `git clone https://github.com/akifkadioglu/organizer`
 2. Navigate to the cloned directory: `cd organizer`
 3. Build and install the Organizer: `make install`
-    - You can change the [storage path](https://github.com/akifkadioglu/organizer/blob/ac2e687146401435b1018020251311010ef052d9/config/config.go#L30) before install
+    - You should change the [storage path](https://github.com/akifkadioglu/organizer/blob/1a87cf607fefca968ed06a577b16d152a48daf59/config/config.go#L30) before install
 4. Start using the CLI: `organizer <command> <parameters>`
 
 ### Usage
