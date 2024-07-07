@@ -35,5 +35,5 @@ func Categorize(path string) (string, error) {
 		return "", err
 	}
 
-	return "organized successfully", nil
+	return "Categorized successfully", nil
 }

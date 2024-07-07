@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"strings"
-
 	"github.com/akifkadioglu/organizer/config"
 	"github.com/akifkadioglu/organizer/olog"
 	"github.com/akifkadioglu/organizer/run"
@@ -13,18 +11,14 @@ import (
 var categorizeCmd = &cobra.Command{
 	Use:     "categorize",
 	Version: config.ReadValue().AppVersion,
-	Example: "organizer categorize /path/to/folder",
-	Short:   "organizer categorize /path/to/folder | default path is current directory",
-	Long:    "Document Organizer looks paths files type and folders your files.",
+	Example: "organizer categorize --path=/path/to/folder",
+	Short:   "organizer categorize --path=/path/to/folder | default path is current directory",
+	Long:    "Organizer looks paths files type and folders your files.",
 	Run: func(cmd *cobra.Command, args []string) {
-		path := "."
-		if len(args) != 0 {
-			path = ""
-			for _, v := range args {
-				path += " " + v
-			}
+		path, _ := cmd.Flags().GetString("path")
+		if path == "" {
+			path = "."
 		}
-		path = strings.TrimSpace(path)
 		res, err := run.Categorize(path)
 		if err != nil {
 			olog.Error(err.Error())
@@ -36,6 +30,7 @@ var categorizeCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(categorizeCmd)
+	categorizeCmd.PersistentFlags().String("path", "", "The path to categorize files. Default is current directory.")
 
 	// Here you will define your flags and configuration settings.
 

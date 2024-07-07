@@ -9,6 +9,7 @@ import (
 
 	"github.com/akifkadioglu/organizer/config"
 	"github.com/akifkadioglu/organizer/olog"
+	"github.com/olekukonko/tablewriter"
 )
 
 // checkPath checks if the path exists
@@ -100,6 +101,14 @@ func informationText(path string) error {
 			"\n" + "Application Types: " + strings.Join(config.ReadValue().ApplicationTypes, ", ") +
 			"\n" + "Office Types: " + strings.Join(config.ReadValue().OfficeTypes, ", ") +
 			"\n" + "Others Types: Literally everything else")
-	
 	return nil
+}
+
+// Log Password as table
+func logPasswordTable(header []string, data [][]string) {
+
+	table := tablewriter.NewWriter(os.Stdout)
+	table.SetHeader(header)
+	table.AppendBulk(data)
+	table.Render()
 }

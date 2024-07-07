@@ -1,16 +1,14 @@
 package config
 
 import (
-	"os"
-	"path/filepath"
-
 	"gopkg.in/yaml.v3"
 )
 
 // Config struct
 type Config struct {
-	AppVersion string `yaml:"app_version"`
-	AppName    string `yaml:"app_name"`
+	AppVersion   string `yaml:"app_version"`
+	AppName      string `yaml:"app_name"`
+	DatabasePath string `yaml:"database_path"`
 
 	AudioTypes       []string `yaml:"audio_types"`
 	VideoTypes       []string `yaml:"video_types"`
@@ -26,16 +24,30 @@ type Config struct {
 	OthersFolder      string `yaml:"other_folder"`
 }
 
+const configYaml = `
+app_name: Organizer
+app_version: 0.0.1
+database_path: "/home/akif/organizer/organizer.db"
+
+audio_folder: "audios"
+video_folder: "videos"
+image_folder: "images"
+application_folder: "applications"
+office_folder: "offices"
+other_folder: "others"
+
+
+office_types: ["xls","xlsx","doc","docx","ppt","pptx","pdf","odt","ods","odp","txt","rtf","csv"]
+image_types: ["jpeg", "jpg", "png", "gif", "bmp", "svg", "webp", "tiff", "tif"]
+audio_types: ["mp3", "wav", "ogg", "flac", "aac", "m4a"]
+application_types: ["exe", "apk", "msi", "dmg", "bin"]
+video_types: ["mp4", "avi", "mov", "mkv", "wmv", "flv", "webm"]
+`
+
 // ReadValue reads the config.yaml file if env variable CONFIG_FILE is not set
 func ReadValue() *Config {
 	var configs Config
-	configFile := os.Getenv("CONFIG_FILE")
-	if configFile == "" {
-		configFile = "config.yaml"
-	}
-	filename, _ := filepath.Abs("./" + configFile)
-	yamlFile, _ := os.ReadFile(filename)
-	yaml.Unmarshal(yamlFile, &configs)
+	yaml.Unmarshal([]byte(configYaml), &configs)
 
 	return &configs
 }
