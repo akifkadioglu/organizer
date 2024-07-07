@@ -1,0 +1,16 @@
+app_name: Document Organizer
+app_version: 0.0.1
+
+audio_folder: "audios"
+video_folder: "videos"
+image_folder: "images"
+application_folder: "applications"
+office_folder: "offices"
+other_folder: "others"
+
+
+office_types: ["xls","xlsx","doc","docx","ppt","pptx","pdf","odt","ods","odp","txt","rtf","csv"]
+image_types: ["jpeg", "jpg", "png", "gif", "bmp", "svg", "webp", "tiff", "tif"]
+audio_types: ["mp3", "wav", "ogg", "flac", "aac", "m4a"]
+application_types: ["exe", "apk", "msi", "dmg", "bin"]
+video_types: ["mp4", "avi", "mov", "mkv", "wmv", "flv", "webm"]
