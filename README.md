@@ -15,11 +15,16 @@ To use the Organizer, you need to have Go installed on your computer.
 
 - organizer categorize --path=<directory_path>: Categorizes files according to their types.
 - organizer password --app=<app_name> --username=<password_name> generate: Generate a password and save it for you
-  - generate ![image](https://github.com/akifkadioglu/organizer/assets/68117188/094f765f-67ef-4af3-9caa-07fa228f6dab)
-  - list ![image](https://github.com/akifkadioglu/organizer/assets/68117188/945ac11d-f4b4-45d8-b74b-531b96c0dbf3)
-  - get ![image](https://github.com/akifkadioglu/organizer/assets/68117188/461e4cb8-2407-4395-9f75-7ec915381922)
-  - remove ![image](https://github.com/akifkadioglu/organizer/assets/68117188/85c83c5e-89e8-47ad-aea0-e623313e8756)
-  - download as JSON ![image](https://github.com/akifkadioglu/organizer/assets/68117188/69c251db-8e8b-4ab5-b7c7-85713a78176f)
+  - generate ![image](https://github.com/akifkadioglu/organizer/assets/68117188/dc642e31-ffa9-4d18-bcf0-fe374fcfff50)
+
+  - list ![image](https://github.com/akifkadioglu/organizer/assets/68117188/a1c479fe-1f39-4979-b208-303b4a42087d)
+
+  - get ![image](https://github.com/akifkadioglu/organizer/assets/68117188/f57ea950-8b03-42cb-bcb9-e60feb7d0484)
+
+  - remove ![image](https://github.com/akifkadioglu/organizer/assets/68117188/9fcaf5d0-d9b0-4a00-9ebd-7d06467406d7)
+
+  - download as JSON ![image](https://github.com/akifkadioglu/organizer/assets/68117188/a1b98d21-1e55-47c5-a3de-2fa73832ece3)
+
 
 
 

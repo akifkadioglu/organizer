@@ -8,6 +8,7 @@ import (
 	"github.com/akifkadioglu/organizer/database/entities"
 	"github.com/akifkadioglu/organizer/olog"
 	"github.com/google/uuid"
+	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
 
@@ -70,9 +71,13 @@ func GeneratePassword(app, username string) {
 	var passwordEntity entities.Password
 	passwordEntity.App = app
 	passwordEntity.Username = username
-	passwordEntity.Password = uuid.New().String()
+	hash, err := bcrypt.GenerateFromPassword([]byte(uuid.New().String()), bcrypt.DefaultCost)
+	if err != nil {
+		olog.Fatal("Error while generating password")
+	}
+	passwordEntity.Password = string(hash)
 
-	err := database.Get().
+	err = database.Get().
 		Where("app = ?", app).
 		Where("username = ?", username).
 		Save(&passwordEntity).Error
