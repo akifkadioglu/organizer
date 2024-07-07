@@ -6,7 +6,7 @@ Organizer is a command-line tool that classifies files based on their mimetype. 
 
 To use the Organizer, you need to have Go installed on your computer.
 
-1. Clone this repository from [GitHub](https://github.com/akifkadioglu/docs_organizer): `git clone https://github.com/akifkadioglu/organizer`
+1. Clone this repository from [GitHub](https://github.com/akifkadioglu/organizer): `git clone https://github.com/akifkadioglu/organizer`
 2. Navigate to the cloned directory: `cd organizer`
 3. Build and install the Organizer: `make install`
 4. Start using the CLI: `organizer <command> <parameters>`
